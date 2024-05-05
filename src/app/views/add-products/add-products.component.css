@@ -3,6 +3,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+
+h1 {
+  color: white;
 }
 
 .formulario {
@@ -47,18 +52,46 @@ main {
   margin-bottom: 20px;
 }
 
+.formulario--casilla label {
+  color: white;
+}
+
 .formulario--casilla input {
   padding: 8px;
   font-size: large;
+  border: none;
+  border-radius: 12px;
 
 }
 
-.añadir {
+.formulario--submit {
   padding: 8px;
+  border-radius: 15px;
+  border: none;
+  font-size: large;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario--submit:hover {
+  background-color: #4CAF50; /* Change background color */
+  color: white; /* Change text color */
+  border: 2px solid #4CAF50; /* Change border color */
 }
 
 .foto {
   width: 300px;
+}
+
+.cancelar {
+  padding: 5px;
+  border: none;
+  border-radius: 15px;
+}
+
+.cancelar:hover {
+  background-color: #ff2727;
+  border: 2px solid red;
+  color:white;
 }
 

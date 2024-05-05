@@ -29,18 +29,23 @@
         min="0"
       >
       <div class="alert-danger alert mt-2" [hidden]="num.valid || num.pristine">
-        Debe ser mayor que cero
+        <span *ngIf="num.errors?.['min']">
+          Debe ser mayor que cero
+        </span>
+        <span *ngIf="num.errors?.['required']">
+          Este campo es obligatorio
+        </span>
       </div>
     </div>
 
 
     <input
       type="submit"
-      class="añadir"
+      class="formulario--submit"
       value="Añadir"
     >
     <a href="/home">
-      <button type="button" class="boton mt-3">
+      <button type="button" class="cancelar mt-3">
         Cancelar
       </button>
     </a>
