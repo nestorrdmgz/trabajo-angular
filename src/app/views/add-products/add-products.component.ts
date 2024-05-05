@@ -3,6 +3,7 @@ import { Firestore, collection, addDoc, query, where, getDocs } from "@angular/f
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { Storage, ref, uploadBytes, getDownloadURL } from "@angular/fire/storage";
+import {min} from "rxjs";
 
 
 @Component({
@@ -72,4 +73,6 @@ export class AddProductsComponent {
     }
   }
 
+  protected readonly min = min;
+  protected readonly require = require;
 }
