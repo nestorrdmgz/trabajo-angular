@@ -58,26 +58,25 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  // Función para incrementar el contador y agregar al carrito
-  // Función para incrementar el contador y agregar al carrito
+
   increment(producto: any): void {
-    producto.contador = parseInt(producto.contador, 10) || 0; // Convertir a número o establecer a 0 si no se puede convertir
+    producto.contador = parseInt(producto.contador, 10) || 0;
     if (producto.contador < producto.num) {
       producto.contador++;
       this.addToCart(producto.name);
     }
   }
 
-// Función para decrementar el contador y eliminar del carrito si es 0
+
   decrement(producto: any): void {
-    producto.contador = parseInt(producto.contador, 10) || 0; // Convertir a número o establecer a 0 si no se puede convertir
+    producto.contador = parseInt(producto.contador, 10) || 0;
     if (producto.contador > 0) {
       producto.contador--;
       this.minusToCart(producto.name);
     }
   }
 
-// Función para agregar al carrito
+
   addToCart(nombre: string): void {
     if (this.carrito.hasOwnProperty(nombre)) {
       this.carrito[nombre]++;
@@ -87,7 +86,7 @@ export class ProductComponent implements OnInit {
     console.log(this.carrito);
   }
 
-// Función para restar al carrito
+
   minusToCart(nombre: string): void {
     if (this.carrito.hasOwnProperty(nombre)) {
       this.carrito[nombre]--;
@@ -131,21 +130,12 @@ export class ProductComponent implements OnInit {
 
   async getAllProducts(): Promise<void> {
     try {
-      // Obtener referencia a la colección de productos
       const productsRef = collection(this.firestore, 'productos');
-
-      // Obtener snapshot de la colección
       const querySnapshot = await getDocs(productsRef);
-
-      // Array para almacenar promesas de actualización
       const updatePromises: Promise<void>[] = [];
-
-      // Recorrer los documentos en la colección
       querySnapshot.forEach((doc: any) => {
         // Obtener nombre del producto
         const nombreProducto = doc.data().name;
-
-        // Verificar si el producto está en el carrito
         if (this.carrito.hasOwnProperty(nombreProducto)) {
           // Calcular nueva cantidad de productos
           const cantidad = this.carrito[nombreProducto];
@@ -155,7 +145,6 @@ export class ProductComponent implements OnInit {
         }
       });
 
-      // Esperar a que todas las actualizaciones se completen
       await Promise.all(updatePromises);
 
       console.log('Actualización de productos completa.');
@@ -166,10 +155,7 @@ export class ProductComponent implements OnInit {
 
   async updatenum(id: string, nuevo: number): Promise<void> {
     try {
-      // Crear referencia al documento
       const userDocRef = doc(this.firestore, `productos/${id}`);
-
-      // Actualizar el campo "num" del documento
       await updateDoc(userDocRef, { num: nuevo });
 
       console.log(`Campo "num" del documento ${id} actualizado correctamente.`);
@@ -178,11 +164,4 @@ export class ProductComponent implements OnInit {
       console.error('Error al actualizar el campo "num" del documento:', error);
     }
   }
-
-
-
-
-
-
-
 }

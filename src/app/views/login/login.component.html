@@ -15,14 +15,14 @@
       <div class="row">
         <div class="col">
       <span *ngIf="dni.errors?.['required']">
-        El campo DNI es obligatorio
+        El campo DNI es obligatorio.
       </span>
         </div>
       </div>
       <div class="row">
         <div class="col">
-      <span *ngIf="dni.errors?.['invalidLength']">
-        El DNI debe tener 8 caracteres
+      <span *ngIf="dni.errors?.['minlength'] ||dni.errors?.['maxlength']">
+        El DNI debe tener 8 caracteres.
       </span>
         </div>
       </div>
@@ -42,7 +42,20 @@
     </div>
 
     <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
-
+      <div class="row">
+        <div class="col">
+      <span *ngIf="password.errors?.['required']">
+        El campo contraseña es obligatorio.
+      </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+      <span *ngIf="password.errors?.['minlength']">
+        El DNI debe tener 8 caracteres
+      </span>
+        </div>
+      </div>
     </div>
 
     <input

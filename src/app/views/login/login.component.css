@@ -2,14 +2,19 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 97vh;
+  height: 100vh;
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+
+h1 {
+  color: white;
 }
 
 .formulario {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 2px solid black;
+  border: none;
   border-radius: 20px;
   padding: 30px;
   width: 40%;
@@ -19,6 +24,10 @@ main {
   display: flex;
   flex-direction: column;
   text-align: left;
+}
+
+.formulario--casilla label {
+  color: white;
 }
 
 .formulario--casilla input {
@@ -37,3 +46,10 @@ main {
   font-weight: bold;
   cursor: pointer;
 }
+
+.formulario--submit:hover {
+  background-color: #4CAF50; /* Change background color */
+  color: white; /* Change text color */
+  border: 2px solid #4CAF50; /* Change border color */
+}
+

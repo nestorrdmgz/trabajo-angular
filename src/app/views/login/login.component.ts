@@ -13,7 +13,7 @@ export class LoginComponent {
   constructor(private firestore: Firestore, private router: Router) {}
 
   dni = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]);
-  password = new FormControl('', Validators.required);
+  password = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
   async procesar() {
     if (this.dni.valid && this.password.valid) {
@@ -24,12 +24,9 @@ export class LoginComponent {
       const querySnapshot = await getDocs(queryRef);
 
       if (querySnapshot.size > 0) {
-        // Get the first document since DNI is unique
         const doc = querySnapshot.docs[0];
-        // Get the ID of the document
         const userId = doc.id;
 
-        console.log('Usuario autenticado correctamente. ID:', userId);
 
         // Save user ID in localStorage
         localStorage.setItem('userId', userId);
