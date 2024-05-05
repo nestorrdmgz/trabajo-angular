@@ -26,7 +26,6 @@ export class HeaderComponent  implements OnInit {
       getDoc(userDocRef).then((docSnapshot) => {
         if (docSnapshot.exists()) {
           this.userData = docSnapshot.data();
-          console.log(this.userData);
         } else {
           console.error('No existe ningún documento de usuario con el id:', id);
         }
