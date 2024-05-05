@@ -13,7 +13,8 @@ import { HomeComponent } from './views/home/home.component';
 import { AddProductsComponent } from './views/add-products/add-products.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProfileComponent } from './views/profile/profile.component';
-
+import { HeaderComponent } from './components/header/header.component';
+import { AuthGuard} from "./guards/auth.guard";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     AddProductsComponent,
     ProductComponent,
     ProfileComponent,
+    HeaderComponent,
 
   ],
   imports: [
@@ -45,7 +47,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
