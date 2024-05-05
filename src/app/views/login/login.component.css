@@ -1,0 +1,39 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 97vh;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 30px;
+  width: 40%;
+}
+
+.formulario--casilla {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formulario--casilla input {
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  font-size: medium;
+}
+
+.formulario--submit {
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,67 @@
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 150px;
+  margin: 30px 0 30px 0;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.formulario--casilla {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.formulario--casilla input {
+  padding: 8px;
+  font-size: large;
+
+}
+
+.añadir {
+  padding: 8px;
+  font-weight: bold;
+}
+
+.foto {
+  width: 300px;
+}
+
+.boton {
+margin-top: ;
+}

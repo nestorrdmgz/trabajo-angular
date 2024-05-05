@@ -1,0 +1,48 @@
+<main>
+  <form class="formulario" (ngSubmit)="procesar()">
+    <h1>Añadir material</h1>
+    <div class="upload-btn-wrapper">
+      <button class="btn">Añadir Foto</button>
+      <input type="file" name="file" accept=".png, .jpg, .jpeg" (change)="cargarImagen($event)">
+    </div>
+
+    <div class="formulario--casilla">
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [formControl]="name"
+      >
+      <div class="alert-danger alert mt-2" [hidden]="name.valid || name.pristine">
+        Este campo es obligatorio
+      </div>
+    </div>
+
+    <div class="formulario--casilla">
+      <label for="num">Cantidad:</label>
+      <input
+        type="number"
+        id="num"
+        name="num"
+        [formControl]="num"
+        min="0"
+      >
+      <div class="alert-danger alert mt-2" [hidden]="num.valid || num.pristine">
+        Debe ser mayor que cero
+      </div>
+    </div>
+
+
+    <input
+      type="submit"
+      class="añadir"
+      value="Añadir"
+    >
+    <a href="/home">
+      <button type="button" class="boton mt-3">
+        Cancelar
+      </button>
+    </a>
+  </form>
+</main>

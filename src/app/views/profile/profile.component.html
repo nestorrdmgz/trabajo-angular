@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div *ngIf="userData && userData.carrito">
+  <h2>Elementos adquiridos:</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Clave</th>
+        <th>Valor</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of userData.carrito | keyvalue">
+        <td>{{ item.key }}</td>
+        <td>{{ item.value | json }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<button type="button" class="btn-danger btn button" (click)="removemap()">Terminar servicio</button>

@@ -1,0 +1,20 @@
+<main>
+  <div *ngIf="productos$ | async as productos" class="card-container p">
+    <div class="card" style="width: 18rem;" *ngFor="let producto of productos">
+      <img [src]="imagesMap.get(producto.url)?.[0]" class="card-img-top">
+      <div class="card-body center">
+        <h5 class="card-title">{{ producto.name }}</h5>
+        <p class="card-text">Máximo: {{ producto.num }}</p>
+        <div class="counter">
+          <button (click)="decrement(producto)">-</button>
+          <span>{{ producto.contador }}</span>
+          <button (click)="increment(producto)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="mensajeError" class="alert alert-danger">
+    {{ mensajeError }}
+  </div>
+  <button type="button" class="btn btn-success mt-5" (click)="uploadCart()">Añadir</button>
+</main>

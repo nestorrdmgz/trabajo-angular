@@ -1,0 +1,10 @@
+<div class="title">
+  <h1>{{ userData?.name }}</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Opciones</button>
+    <div class="dropdown-content">
+      <a href="/profile">Perfil</a>
+      <button id="logoutButton" (click)="logout()">Cerrar sesión</button> <!-- Asignar el evento click a logout() -->
+    </div>
+  </div>
+</div>

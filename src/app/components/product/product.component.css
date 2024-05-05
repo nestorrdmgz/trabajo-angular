@@ -1,0 +1,12 @@
+main{
+  text-align: center;
+}
+.p {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.center {
+  text-align: center;
+}
+
