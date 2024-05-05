@@ -29,3 +29,19 @@ En esta colección, cada documento representa un producto individual. Cada produ
       - [nombre del producto en el carrito]: [cantidad del producto en el carrito]
 
 En esta colección, cada documento representa un usuario individual. Cada usuario tiene un DNI, un nombre, una contraseña y un ID único. Además, cada usuario tiene un campo "carrito" que almacena los productos que ha añadido al carrito. Dentro del campo "carrito", cada documento representa un producto en el carrito, con su nombre y la cantidad correspondiente.
+
+## Estructura
+
+- Componentes
+  - Header
+  - Producto (estructura de cada producto)
+-Guards
+  - auth (Comprueba si has inicado seción para que no puedas acceder a otras páginas desde el buscador)
+- Services
+  - auth (Trabaja con lo ateriormente comentado)
+- Views
+  - Add product
+  - Home
+  - Login
+  - Profile
+    
